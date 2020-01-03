@@ -12,7 +12,7 @@ class config:
     delay = None
     #messages
     initMessage = None
-    messageDelay
+    messageDelay = None
     conditionMessage = dict()
     messageList = list()
     random = False

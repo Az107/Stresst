@@ -35,10 +35,12 @@ class stress:
             if self.conf.random or index < len(self.conf.messageList) :
                 conn.send(self.conf.messageList[index])
                 index += 1
+            elif index == len(self.conf.messageList):
+                index = 0
             else:
                 conn.isConnected = False
                 conn.close()
-            sleep(1) # add to the config file
+            sleep(self.conf.messageDelay)
         self.connections.append(conn)
         self.count -= 1
 
